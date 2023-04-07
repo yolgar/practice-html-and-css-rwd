@@ -3,7 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body {
+    display: grid;
+    grid-template-areas: 
+    "a"
+    "b"
+    "c";
+}
 .a, .b, .c {
     border: 3px solid transparent;
     min-height: 50px;
@@ -13,8 +19,22 @@
     align-items: center;
 }
 
+body > .a {
+    grid-area: a;
+}
+
+body > .b {
+    grid-area: b;
+}
+
+body > .c {
+    grid-area: c;
+}
+
+
 .a {
     border-color: #ffffba
+    
 }
 
 .b {
