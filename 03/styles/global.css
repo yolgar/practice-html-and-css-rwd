@@ -11,6 +11,7 @@ body {
     "t"
     "v";
 }
+
 .p, .t, .v {
     border: 3px solid transparent;
     min-height: 50px;
@@ -20,36 +21,39 @@ body {
     align-items: center;
 }
 
-body > .p {
-    grid-area: p;
-}
-
-body > .t {
-    grid-area: t;
-}
-
-body > .v {
-    grid-area: v;
-}
-
 .p {
     border-color: #ffffba;
+    grid-area: p;
+    line-height: 0;
 }
 
 .t {
     border-color: #ffdfba;
+    grid-area: t;
 }
 
 .v {
     border-color: #baffc9;
+    position: relative;
+    height: 0;
+    padding-bottom: calc(100% * 315 / 560);
+    grid-area: v;
 }
 
-@media screen and (max-width: 1199px){
+.v iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (min-width: 600px){
 body {
     grid-template-areas: 
     "p t"
     "v t";
-    grid-template-columns: minmax(200px 50%) auto;
+    grid-template-columns: minmax(200px, 50vw) auto;
 }
 }
 
@@ -58,6 +62,10 @@ body {
         grid-template-areas: 
         "p v"
         "t t";
-        grid-template-columns: auto 700px, 700px auto;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    .v {
+        padding-bottom: calc(100% * 400 / 560);
     }
 }
