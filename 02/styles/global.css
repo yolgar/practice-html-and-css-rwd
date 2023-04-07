@@ -5,32 +5,17 @@
 }
 body {
     display: grid;
-    grid-template-areas: 
-    "a"
-    "b"
-    "c";
 }
+
 .a, .b, .c {
     border: 3px solid transparent;
     min-height: 50px;
+    height: 50vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-body > .a {
-    grid-area: a;
-}
-
-body > .b {
-    grid-area: b;
-}
-
-body > .c {
-    grid-area: c;
-}
-
 
 .a {
     border-color: #ffffba
@@ -43,4 +28,26 @@ body > .c {
 
 .c {
     border-color: #baffc9;
+    order: 1;
+}
+
+@media screen and (min-width: 600px) {
+    body {
+        grid-template-areas: 
+        "a a"
+        "c b";
+        grid-template-columns: minmax(auto, 600px) minmax(auto, 600px);
+        justify-content: center;
+    }
+    .a {
+        grid-area: a;
+    }
+    
+    .b {
+        grid-area: b;
+    }
+    
+    .c {
+        grid-area: c;
+    }
 }
