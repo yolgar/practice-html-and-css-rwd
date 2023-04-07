@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+body {
+    display: grid;
+    grid-template-areas: 
+    "p"
+    "t"
+    "v";
+}
 .p, .t, .v {
     border: 3px solid transparent;
     min-height: 50px;
@@ -13,8 +20,20 @@
     align-items: center;
 }
 
+body > .p {
+    grid-area: p;
+}
+
+body > .t {
+    grid-area: t;
+}
+
+body > .v {
+    grid-area: v;
+}
+
 .p {
-    border-color: #ffffba
+    border-color: #ffffba;
 }
 
 .t {
@@ -23,4 +42,22 @@
 
 .v {
     border-color: #baffc9;
+}
+
+@media screen and (max-width: 1199px){
+body {
+    grid-template-areas: 
+    "p t"
+    "v t";
+    grid-template-columns: minmax(200px 50%) auto;
+}
+}
+
+@media screen and (min-width: 1200px){
+    body {
+        grid-template-areas: 
+        "p v"
+        "t t";
+        grid-template-columns: auto 700px, 700px auto;
+    }
 }
