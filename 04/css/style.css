@@ -1,3 +1,62 @@
-body {
+* {
     box-sizing: border-box;
 }
+
+.menu {
+    min-height: 50px;
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2px;
+}
+
+.dropdown--item {
+    margin-left: 10px;
+}
+
+.hamburger-container {
+    position: relative;
+    padding: 5px;
+    margin: 8px;
+    min-height: 5px;
+    height: 5vh;
+}
+
+.hamburger {
+    position: relative;
+    width: 40px;
+    height: 35px;
+    border: 0;
+    border-top: 5px solid #9a9a9a;
+    background: transparent;
+    transition: 0.3s transform linear;
+}
+
+.hamburger::before, .hamburger::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-top: 5px solid #9a9a9a;
+    transform: translateY(10px);
+  }
+
+  .hamburger::after {
+    transform: translateY(25px);
+    transition: 0.3s transform linear;
+  }
+
+.hamburger:focus {
+    transform: rotate(45deg);
+    border: none;
+}
+
+.hamburger:focus::after {
+    transform: rotate(-90deg) translate(-10px);
+}
+
+
+
+@media screen and (min-width: 600px)
