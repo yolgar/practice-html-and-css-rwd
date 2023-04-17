@@ -10,27 +10,28 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div class="hamburger-container">
-        <button class="hamburger"></button>
-    </div>
     <nav class="nav">
-        <ul class="menu">
-            <li class="menu--item">
-                <a href="#">start</a>
+    
+       
+        <label class="nav__hamburger" for="toggler"></label>
+        <input class="nav__toggler" id="toggler" type="checkbox">
+        <ul class="nav__list">
+            <li class="nav__item">
+                <a href="#" class="nav__link">start</a>
             </li>
-            <li class="menu--item">
-                <a href="#">oferta</a>
-                <ul class="dropdown">
-                    <li class="dropdown--item">
-                        <a href="">strony internetowe</a>
+            <li class="nav__item nav__item--children">
+                <a href="#" class="nav__link">oferta</a>
+                <ul class="nav__list nav__list--dropdown">
+                    <li class="nav__item nav__item--dropdown">
+                        <a href="#" class="nav__link nav__link--dropdown">strony internetowe</a>
                     </li>
-                    <li class="dropdown--item">
-                        <a href="">pozycjonowanie stron www</a>
+                    <li class="nav__item nav__item--dropdown">
+                        <a href="#" class="nav__link nav__link--dropdown">pozycjonowanie stron www</a>
                     </li>
                 </ul>
             </li>
-            <li class="menu--item">
-                <a href="#">kontakt</a>
+            <li class="nav__item">
+                <a href="#" class="nav__link">kontakt</a>
             </li>
         </ul>
     </nav>

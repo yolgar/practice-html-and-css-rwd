@@ -2,61 +2,103 @@
     box-sizing: border-box;
 }
 
-.menu {
-    min-height: 50px;
-    height: 50vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    margin-left: 2px;
+html {
+    font-size: 10px;
 }
 
-.dropdown--item {
-    margin-left: 10px;
+body {
+    font-size: 2rem;
+}
+:root {
+    --main: #F2E3DB;
+    --hamburger: #263A29;
+    --text: #E86A33;
 }
 
-.hamburger-container {
-    position: relative;
-    padding: 5px;
-    margin: 8px;
-    min-height: 5px;
-    height: 5vh;
+.nav {
+background-color: var(--main);
+padding: 1rem 2rem;
 }
 
-.hamburger {
-    position: relative;
-    width: 40px;
-    height: 35px;
-    border: 0;
-    border-top: 5px solid #9a9a9a;
-    background: transparent;
-    transition: 0.3s transform linear;
+.nav__hamburger {
+    display: block;
+    width: 3rem;
+    height: 2rem;
+    border-top: 0.4rem solid var(--hamburger);
+    border-bottom: 0.4rem solid var(--hamburger);
 }
 
-.hamburger::before, .hamburger::after {
+.nav__toggler {
+    display: none;
+}
+
+.nav__hamburger::after{
+    display: block;
     content: "";
+    height: 0.4rem;
+    position: relative;
+    top: 0.4rem;
+    left: -0.02rem;
+    background-color: var(--hamburger);
+
+}
+
+
+.nav__list{
+    display: none;
+}
+
+
+.nav__toggler:checked + .nav__list {
+display: block;
+}
+
+.nav__list--dropdown {
+    padding-left: 2rem;
+    display: block;
+}
+
+.nav__item {
+    padding: 0.33rem;
+}
+
+
+.nav__link {
+    text-decoration: none;
+    color: var(--text);
+}
+
+.nav__link:hover {
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 600px) {
+.nav__hamburger {
+    display: none;
+}
+.nav__list {
+    display: block;
+    display: flex;
+}
+.nav__item--children {
+    position: relative;
+}
+.nav__link {
+    border: 0.2rem solid var(--hamburger);
+    padding: 0.3rem 1rem;
+}
+.nav__link--dropdown {
+    border: 0;
+}
+.nav__list--dropdown {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    border-top: 5px solid #9a9a9a;
-    transform: translateY(10px);
-  }
-
-  .hamburger::after {
-    transform: translateY(25px);
-    transition: 0.3s transform linear;
-  }
-
-.hamburger:focus {
-    transform: rotate(45deg);
-    border: none;
+    display: block;
+    top: 100%;
+    left: -5rem;
+    right: -15rem;
+    display: none;
 }
-
-.hamburger:focus::after {
-    transform: rotate(-90deg) translate(-10px);
+.nav__item:hover > .nav__list--dropdown{
+display: inline-block;
 }
-
-
-
-@media screen and (min-width: 600px)
+}
