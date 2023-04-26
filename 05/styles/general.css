@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #9CA777;
+    --blue: #B8E7E1;
+    --orange: #F97B22;
+}
+
+.green {
+    border: 3px solid var(--green);
+    width:100vw;
+}
+
+.blue {
+    border: 2px solid var(--blue);
+    width: 1000px;
+}
+
+.orange {
+    background-color: var(--orange);
+}
