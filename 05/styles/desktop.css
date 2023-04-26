@@ -1,8 +1,9 @@
+.blue {
+    padding: 5px 0px;
+}
 .blue--header {
-    position: unset;
     display: flex;
     justify-content: space-between;
-    padding: 5px 0px;
 }
 
 .orange--logo {
@@ -11,6 +12,7 @@
 }
 
 .orange--menu {
+    position: static;
     background-color: var(--item);
     width: 400px;
 }
@@ -22,22 +24,22 @@ display: none;
 
 .blue--main {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .orange--main {
-    width: 300px;
+    width: 50%;
 }
 
 .orange--main + .orange--main {
-    margin-top: 0px;
+    margin: 0px 5px 0px 0px;
 }
 
 .orange--main--1 {
     order: 1;
 }
 
-.blue--three {
+.blue--section {
     display: flex;
     justify-content: space-between;
 }
