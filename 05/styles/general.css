@@ -3,21 +3,27 @@
 }
 
 :root {
-    --green: #9CA777;
-    --blue: #B8E7E1;
-    --orange: #F97B22;
+    --wrapper: #9CA777;
+    --container: #9999F2;
+    --item: #F97B22;
 }
 
 .green {
-    border: 3px solid var(--green);
-    width:100vw;
+    border: 5px solid var(--wrapper);
+    /* width:100vw; */
+    padding: 5px;
 }
 
 .blue {
-    border: 2px solid var(--blue);
-    width: 1000px;
+    border: 3px solid var(--container);
+    /* width: 1000px; */
 }
 
 .orange {
-    background-color: var(--orange);
+    background-color: var(--item);
+    min-height: 50px;
 }
+
+/* .section1, .section2, .section3, .section4 {
+    display: flex;
+} */
