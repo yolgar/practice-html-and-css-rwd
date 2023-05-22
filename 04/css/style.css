@@ -17,15 +17,35 @@ body {
 
 .nav {
 background-color: var(--main);
-padding: 1rem 2rem;
+padding: 2rem 2rem;
 }
 
 .nav__hamburger {
-    display: block;
     width: 3rem;
-    height: 2rem;
-    border-top: 0.4rem solid var(--hamburger);
-    border-bottom: 0.4rem solid var(--hamburger);
+    height: 0.4rem;
+    background-color: var(--hamburger);
+    transition: .4s ease;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+.nav__hamburger::after,
+.nav__hamburger::before{
+    content: "";
+    position: absolute;
+    width: 3rem;
+    height: 0.4rem;
+    background-color: var(--hamburger);
+    border-radius: 3px;
+    transition: .4s ease;
+}
+
+.nav__hamburger::after{
+    margin-top: 8px;
+}
+
+.nav__hamburger::before{
+    margin-top: -8px;
 }
 
 .nav__toggler {
@@ -33,18 +53,24 @@ padding: 1rem 2rem;
 }
 
 .nav__toggler:checked ~ .nav__hamburger {
-display: block;
+background-color: transparent;
 }
 
-.nav__hamburger::after{
-    display: block;
-    content: "";
-    height: 0.4rem;
-    position: relative;
-    top: 0.4rem;
-    left: -0.02rem;
-    background-color: var(--hamburger);
+.nav__toggler:checked ~ .nav__hamburger::before,
+.nav__toggler:checked ~ .nav__hamburger::after {
+    margin-top: 0;
+}
 
+.nav__toggler:checked ~ .nav__hamburger::before{
+    transform: rotate(45deg);
+}
+
+.nav__toggler:checked ~ .nav__hamburger::after{
+    transform: rotate(-45deg);
+}
+
+.nav__toggler:checked ~ .nav__list {
+    display: block;
 }
 
 .nav__list{
